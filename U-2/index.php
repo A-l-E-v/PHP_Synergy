@@ -1,5 +1,9 @@
 <?php 
 
+//
+// https://github.com/A-l-E-v/PHP_Synergy/blob/main/U-2/index.php
+//
+
 // 1. Вывести приветственное сообщение в начале электронного
 // письма: “Hello, Anna!”
 
