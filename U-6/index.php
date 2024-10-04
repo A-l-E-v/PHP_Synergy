@@ -1,5 +1,7 @@
 <?php
 
+// https://github.com/A-l-E-v/PHP_Synergy/blob/main/U-6/index.php
+
 // 1. Напишите функцию, определяющую, к какой четверти часа принадлежит значение переменной $time 
 // (диапазон возможных значений лежит от 0 до 59).
 
@@ -74,3 +76,22 @@ $month = 12;
 print_r("{$month} месяц. Это " . season($month) . ".<br>");
 $month = 13;
 print_r("{$month} месяц. " . season($month) . "<br>");
+
+print_r("<br>");
+
+
+// 3. Напишите функцию, которая будет возвращать квадрат числа, если оно четное, 
+// и его кубическую степень в противном случае.
+
+function EvenOdd23($number)  {
+
+    if (($number % 2) === 0) {
+        return $number ** 2;
+    } else return $number ** 3;
+    
+}
+
+$number = 4;
+print_r("{$number} - " . EvenOdd23($number) . "<br>");
+$number = 3;
+print_r("{$number} - " . EvenOdd23($number) . "<br>");
