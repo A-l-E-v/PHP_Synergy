@@ -67,5 +67,84 @@ foreach ($ThreeL as $temp) {
     print_r ("{$temp}, ");
 }
 print_r ("<br>");
+print_r ("<br>");
+
+
+
+
+// 5. Создайте многомерный массив из 10 подмассивов. 
+// Заполните каждый из подмассивов 10-ю случайными числами в диапазоне значений от 1 до 10.
+
+$a = array_fill(0, 10, array_fill(0, 10, 0));
+
+// заполним 10 массивов
+for ($i = 0; $i < 10; $i++) {
+    for ($j = 0; $j < 10; $j++) {
+        $a[$i][$j] = rand(1,10);
+    }
+}
+
+// распечатаем многомерный массив
+for ($i = 0; $i < 10; $i++) {
+    for ($j = 0; $j < 10; $j++) {
+        print_r($a[$i][$j]." ");
+    }
+    print_r ("<br>");
+}
+
+print_r ("<br>");
+print_r ("<br>");
+
+
+// 6. Создайте многомерный массив с данными пользователей: имя пользователя, логин и пароль. 
+// При организации подмассивов используйте формат ключ-значение ("userName" => "Stanley").
+// С помощью цикла выведите данные пользователей также в формате ключ-значение.
+
+$userDB = [
+    'user1' => [
+      'userName' => 'Stanley',
+      'login' => 'stan_ley',
+      'password' => 'stan+pass',
+    ],
+    'user2' => [
+      'userName' => 'John',
+      'login' => 'johnny',
+      'password' => 'passOFjoHnny123',
+    ],
+    'user3' => [
+      'userName' => 'Marry',
+      'login' => 'maaariiiiam',
+      'password' => 'm!mdjer(&',
+    ],
+    'user4' => [
+      'userName' => 'Kenny',
+      'login' => 'Ken88',
+      'password' => 'Jjdc*&(',
+    ],
+    
+  ];
+
+// разные формы вывода данных пользователей
+
+//   foreach ($userDB as $user){
+//     print_r($user);
+//     print("<br>");
+//   }
+  
+//   foreach ($userDB as $user){
+//     foreach ($user as $userData) {
+//         print_r($userData);
+//         print("<br>");
+//     }
+//     print("<br>");
+
+//   }
+
+foreach ($userDB as $user){
+    foreach ($user as $key => $value){
+        print_r("\"$key\" => \"$value\"<br>");
+    }
+    print("<br>");
+}
 
 
