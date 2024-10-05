@@ -148,3 +148,43 @@ foreach ($userDB as $user){
 }
 
 
+// 7. Посчитайте сумму квадратов чисел в диапазоне от 1 до 25.
+
+for ($i = 1; $i < 26; $i++) {
+    $sumSq += $i ** 2;
+    print_r($i." -  ".$sumSq."<br>");
+}
+
+print_r("Сумма квадратов чисел от 1 до 25 равна: {$sumSq}");
+
+print("<br>");
+print("<br>");
+
+// 8. Напишите функцию, которая будет формировать приветственную фразу для разных пользователей (разных имен). 
+// Дополните эту функцию возможностью выводить приветствие на разных языках: 
+// русский, английский, французский и итальянский.
+
+function Greetings ($name, $lang){
+    switch ($lang){
+        case "rus":
+            print_r("Здравствуйте, {$name}!<br>");
+            break;
+        case 'eng':
+            print_r("Hello, {$name}!<br>");
+            break;
+        case 'fra':
+            print_r("Bonjour, {$name}!<br>");
+            break;
+        case 'ita':
+            print_r("Ciao, {$name}!<br>");
+            break;
+        default:
+            print_r("Такого языка не знаю...<br>");
+    }
+}
+
+Greetings("Вася", "rus");
+Greetings("Stanley", "eng");
+Greetings("Pierre", "fra");
+Greetings("Marcello", "ita");
+Greetings("Karl", "deu");
