@@ -36,4 +36,64 @@ $year = substr($splittedDateLine,4,2);
 echo date("d.m.Y", mktime(0, 0, 0, $day, $month, $year));
 
 
+print_r("<br>");
+print_r("<br>");
+
+
+// 3. С помощью стандартной функции strpos() определите, 
+// есть ли подстрока “пяти” во фразе “Я считаю до пяти”. 
+// Организуйте вывод с помощью условной конструкции.
+
+$textLine = 'Я считаю до пяти';
+$search1 = 'пяти';
+$search2 = 'шести';
+
+if (strpos($textLine, $search1)){
+    print_r ("Строка \"{$search1}\" содержится в тексте: \"{$textLine}\"");
+} else {
+    print_r ("Строка \"{$search1}\" не содержится в тексте: \"{$textLine}\"");
+
+}
+
+print_r("<br>");
+print_r("<br>");
+
+if (strpos($textLine, $search2)){
+    print_r ("Строка \"{$search2}\" содержится в тексте: \"{$textLine}\"");
+} else {
+    print_r ("Строка \"{$search2}\" не содержится в тексте: \"{$textLine}\"");
+
+}
+
+print_r("<br>");
+print_r("<br>");
+
+
+
+// 4. Определите имя файл в строке пути к нему “C:/OpenServer/domains/localhost/index.php”. 
+// Используйте стандартные функции substr() и strrchr().
+
+function ExtractFileName ($path){
+
+    // определяем позицию последнего слэша и берём остаток строки
+    $lastSlashPosition = strrchr($path, '/');
+
+    // удаляем слэш и оставляем полное имя файла с расширением
+    $fileFullName = substr($lastSlashPosition,1, strlen($lastSlashPosition));
+
+    // определяем позицию последней точки - расширение файла
+    $fileExtension = strrchr($fileFullName, '.');
+
+    // отделяем имя файла от полного имени файла с расширением
+    $fileName = substr($fileFullName, 0, strlen($$fileFullName) - strlen($fileExtension));
+
+    print_r($fileName);
+    print_r("<br>");
+
+}
+
+$path = 'C:/OpenServer/domains/localhost/index.php';
+print_r("Имя файла в адресе {$path}: ");
+ExtractFileName($path);
+
 
