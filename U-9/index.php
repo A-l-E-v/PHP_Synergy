@@ -16,6 +16,15 @@ HEREDOC;
 print_r("<br>");
 print_r("<br>");
 
+$poem = <<<HEREDOC
+«Аптеку позабудь ты для венков лавровых
+И не мори больных, но усыпляй здоровых.»
+HEREDOC;
+
+echo nl2br($poem);
+
+print_r("<br>");
+print_r("<br>");
 
 
 // 2. С помощью стандартных функций substr(), chunk_split() и date() выведите строку “010122”
