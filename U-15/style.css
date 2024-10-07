@@ -1,0 +1,20 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    line-height: 25px;
+}
+.table{
+    width: 700px;
+}
+.table td, th{
+    border: 1px solid #111;
+    padding: 5px 10px 5px 10px;
+}
+tfoot{
+    text-align: right;
+    background-color: #99CCFF;
+}
+thead{
+    background-color: #CCCCCC;
+}
