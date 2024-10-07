@@ -1,3 +1,4 @@
+<!-- https://github.com/A-l-E-v/PHP_Synergy/blob/main/U-15/index.php -->
 <?php
 
 $people = array(
@@ -5,8 +6,6 @@ $people = array(
     array('2','Иванова Кристина Викторовна', 'helloworld@mail.ru', 'жен', '1972'),
     array ('3','Борисов Максим Анатольевич', 'helloworld@mail.ru', 'муж', '1989')
 );
-$rows = count ($people);
-$cols = count($people[0]);
 
 ?>
 
@@ -29,6 +28,7 @@ $cols = count($people[0]);
         <th>Пол</th>
         <th>Года рождения</th>
     </thead>
+
     <?php
     echo "<tbody>";
     foreach ($people as $row){
@@ -38,5 +38,8 @@ $cols = count($people[0]);
     }
     echo "</tbody>";
     ?>
+    <tfoot>
+        <td colspan="5">Итого: 3</td>
+    </tfoot>
 </table>
 </body>
