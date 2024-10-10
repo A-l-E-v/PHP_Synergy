@@ -30,11 +30,13 @@ print_r("Кодировка БД установлена: " . mysqli_character_se
 
 
 // попытка формирования запроса к БД
-$sql = "SELECT clients.id, clients.surname, clients.firstname, clients.secondname, clients.phone, 
-material.materialname, products.productname, orders.orderDate FROM clients 
- material JOIN products JOIN orders ON orders.clientID=clients.ID and orders.materialID=material.ID 
- and orders.productID=products.ID;";
 
+$dateTimeOrder = '2024-10-08 09:00:00';
+
+$sql = "SELECT c.id, c.surname, c.firstname, c.secondname, 
+c.phone, m.materialname, p.productname, o.orderDate 
+FROM clients as c JOIN material as m JOIN products as p JOIN orders as o ON o.clientID=c.ID 
+and o.materialID=m.ID and o.productID=p.ID where o.orderDate >= '{$dateTimeOrder}'";
 
 try {
     $result = mysqli_query($connection, $sql);
@@ -51,8 +53,13 @@ print_r("Запрос к БД успешный!<br>");
 // вывод информации
 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+print_r ("<br>Заказы, совершённые после: ". $dateTimeOrder."<br>");
+
 foreach ($rows as $row){
-        print_r("<br>Имя клиента: " . $row['surname'] . ";<br>Идентификатор: " . $row['id'] . "<br>" . $row['phone'] . "<br>");
+        print_r("<br>Имя клиента: " . $row['surname'] . ' '. $row['firstname'] . ' '. $row['secondname'].
+        "<br>Номер телефона " . $row['phone'] . "<br>".
+        "Товар: " . $row['productname'].'<br>'.
+        'Материал: '. $row['materialname'].'<br>'.'<br>');
 
 }
 
