@@ -1,15 +1,15 @@
-/* https://github.com/A-l-E-v/PHP_Synergy/blob/main/U-24/style.css */
-
 .form-horizontal{
     background: transparent;
     border: 2px, solid, darkblue;
-    width: 25%;
+    text-align: center;
+    width: 100%;
     padding: 20px;
     margin: 10px;
     border-radius: 30px;
+    width: 100%;
 }
 
-.form-horizontal .form-group{ margin: 0 0 15px; }
+/* .form-horizontal .form-group{ margin: 0 0 15px; } */
 .form-horizontal label{ font-size: 15px; }
 .form-horizontal .form-control{
     width: 100%;
@@ -22,3 +22,12 @@
     border: 1px, solid, darkblue;
     border-radius: 10px;
 }
+
+.btn{
+    margin-top: 10px;
+}
+
+.error{
+    color: red;
+}
+/* https://github.com/A-l-E-v/PHP_Synergy/blob/main/U-26/style.css */
